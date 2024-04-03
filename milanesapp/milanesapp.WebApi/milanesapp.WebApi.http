@@ -1,0 +1,6 @@
+@milanesapp.WebApi_HostAddress = http://localhost:5022
+
+GET {{milanesapp.WebApi_HostAddress}}/milanesa/
+Accept: application/json
+
+###
