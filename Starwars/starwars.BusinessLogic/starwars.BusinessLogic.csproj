@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\starwars.Domain\starwars.Domain.csproj" />
+    <ProjectReference Include="..\starwars.IBusinessLogic\starwars.IBusinessLogic.csproj" />
+    <ProjectReference Include="..\starwars.IDataAccess\starwars.IDataAccess.csproj" />
+    <ProjectReference Include="..\starwars.Exceptions\starwars.Exceptions.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Promotions\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Promotions\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="Promotions\Promotion1.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Promotions\Promotion2.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Promotions\Promotion3.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+</Project>
