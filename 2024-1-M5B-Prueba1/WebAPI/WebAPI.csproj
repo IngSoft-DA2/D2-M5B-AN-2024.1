@@ -12,6 +12,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Logic\Logic.csproj" />
+    <ProjectReference Include="..\Medicines\Medicines.csproj" />
+    <ProjectReference Include="..\Drugs\Drugs.csproj" />
   </ItemGroup>
 
 </Project>
