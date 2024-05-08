@@ -4,8 +4,8 @@ using Logic.Models;
 
 namespace WebAPI.Controllers;
 
-[ApiController]
 [Route("[controller]")]
+[ApiController]
 public class MedicineController : ControllerBase
 {
     private readonly IMedicineService service;
@@ -15,28 +15,30 @@ public class MedicineController : ControllerBase
     }
 
     [HttpGet]
+    [RequestFilter]
     public IActionResult GetAll()
     {
         try
         {
-            return Ok(this.service.GetAll());
+            return Ok(new ResponseModel { Success = true, Response = this.service.GetAll() });
         }
         catch (Exception ex)
         {
-            return BadRequest(ex.Message);
+            return BadRequest(new ResponseModel { Success = false, Response = ex.Message });
         }
     }
 
     [HttpPost("main-drug")]
+    [RequestFilter]
     public IActionResult MainDrug([FromBody] Medicine body)
     {
         try
         {
-            return Ok(this.service.GetMainDrug(body));
+            return Ok(new ResponseModel { Success = true, Response = this.service.GetMainDrug(body) });
         }
         catch (Exception ex)
         {
-            return BadRequest(ex.Message);
+            return BadRequest(new ResponseModel { Success = false, Response = ex.Message });
         }
     }
 }
