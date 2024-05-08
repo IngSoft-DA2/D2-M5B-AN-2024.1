@@ -1,3 +1,8 @@
+using Logic;
+using Logic.Models;
+using Drugs;
+using Medicines;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -7,6 +12,9 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+//Services
+builder.Services.AddScoped<IDrugsService, DrugsService>();
+builder.Services.AddScoped<IMedicineService, MedicineService>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
