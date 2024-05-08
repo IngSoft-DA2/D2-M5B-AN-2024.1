@@ -25,6 +25,7 @@
     <ProjectReference Include="..\Medicines\Medicines.csproj" />
     <ProjectReference Include="..\Logic\Logic.csproj" />
     <ProjectReference Include="..\Drugs\Drugs.csproj" />
+    <ProjectReference Include="..\WebApi\WebApi.csproj" />
   </ItemGroup>
 
 </Project>
