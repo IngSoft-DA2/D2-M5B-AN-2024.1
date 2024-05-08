@@ -1,11 +1,25 @@
+using Drugs;
+using Logic;
+using Medicines;
+using WebAPI;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
 builder.Services.AddControllers();
+builder.Services.AddScoped<IMedicineService, MedicineService>();
+builder.Services.AddScoped<IDrugsService, DrugsService>();
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddControllersWithViews(options =>
+{
+    options.Filters.Add(typeof(ResponseFormatFilter));
+    options.Filters.Add(typeof(ValidateRequestFilter));
+});
 
 var app = builder.Build();
 
