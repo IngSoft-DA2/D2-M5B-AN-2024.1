@@ -5,11 +5,12 @@ namespace Medicines;
 
 public class MedicineService : IMedicineService
 {
-    private readonly IDrugsService drugService;
+    private readonly IDrugsService _drugService;
     public MedicineService(IDrugsService drugService)
     {
-        this.drugService = drugService;
+        _drugService = drugService;
     }
+
     public IEnumerable<Medicine> GetAll()
     {
         return
@@ -31,7 +32,7 @@ public class MedicineService : IMedicineService
         if (medicine.Drugs?.Length == 1)
             return medicine.Drugs?[0].Name ?? throw new Exception("There are no drugs");
 
-        string mainDrug = this.drugService.MainDrug(medicine.Drugs);
+        string mainDrug = _drugService.MainDrug(medicine.Drugs);
         return mainDrug;
     }
 }
