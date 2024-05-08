@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Logic\Logic.csproj" />
+    <ProjectReference Include="..\ServicesFactory\ServicesFactory.csproj" />
   </ItemGroup>
 
 </Project>
