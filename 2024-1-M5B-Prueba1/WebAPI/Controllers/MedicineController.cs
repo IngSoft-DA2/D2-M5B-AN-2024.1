@@ -5,7 +5,7 @@ using Logic.Models;
 namespace WebAPI.Controllers;
 
 [ApiController]
-[Route("[controller]")]
+[Route("api/v1/medicinas")]
 public class MedicineController : ControllerBase
 {
     private readonly IMedicineService service;
@@ -15,8 +15,12 @@ public class MedicineController : ControllerBase
     }
 
     [HttpGet]
-    public IActionResult GetAll()
+    public IActionResult GetAll([FromHeader]string header)
     {
+        if(header == null || header != "M5B-AN")
+        {
+            return Unauthorized();
+        }
         try
         {
             return Ok(this.service.GetAll());
@@ -28,15 +32,31 @@ public class MedicineController : ControllerBase
     }
 
     [HttpPost("main-drug")]
-    public IActionResult MainDrug([FromBody] Medicine body)
+    public IActionResult MainDrug([FromHeader]string header,[FromBody] Medicine body)
     {
+        if(header != "M5B-AN")
+        {
+            return Unauthorized();
+        }
         try
         {
-            return Ok(this.service.GetMainDrug(body));
+            return SuccessResponse("operacion exitosa");
         }
         catch (Exception ex)
         {
-            return BadRequest(ex.Message);
+            return ErrorResponse(ex);
         }
     }
+
+    protected IActionResult SuccessResponse(string response)
+    {
+        return Ok(new { success = true , response });
+    }
+
+    protected IActionResult ErrorResponse(Exception ex)
+    {
+        return StatusCode(500, new { success = false, response = ex.Message });
+    }
+    
+    
 }
