@@ -10,7 +10,7 @@ namespace SimpleServer.test
     public class WaysToTest
     {
         //TODO Comentado
-        ///*
+        ///* ()
         // * Un test fake es un tipo de objeto utilizado en pruebas de software para reemplazar un objeto real que tiene dependencias externas (como una base de datos o un servicio web). El objeto falso tiene una implementación simplificada de ciertos métodos que se utilizan en lugar del objeto real en las pruebas. El objetivo de usar un objeto falso es aislar el código que se está probando de las dependencias externas, de manera que las pruebas puedan ejecutarse de manera más rápida y confiable.
         // */
         [TestMethod]
