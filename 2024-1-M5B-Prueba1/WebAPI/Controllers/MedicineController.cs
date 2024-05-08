@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Logic;
 using Logic.Models;
+using WebAPI.Filters;
 
 namespace WebAPI.Controllers;
 
