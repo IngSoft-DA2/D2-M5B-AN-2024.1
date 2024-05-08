@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Logic;
 using Logic.Models;
+using WebAPI.Filters;
 
 namespace WebAPI.Controllers;
 
@@ -15,6 +16,7 @@ public class MedicineController : ControllerBase
     }
 
     [HttpGet]
+    [ValidationFilter]
     public IActionResult GetAll()
     {
         try
@@ -28,6 +30,7 @@ public class MedicineController : ControllerBase
     }
 
     [HttpPost("main-drug")]
+    [ValidationFilter]
     public IActionResult MainDrug([FromBody] Medicine body)
     {
         try
