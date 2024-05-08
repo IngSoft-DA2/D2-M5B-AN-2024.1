@@ -26,10 +26,10 @@ public class MedicineService : IMedicineService
 
     public string GetMainDrug(Medicine medicine)
     {
-        if (medicine.Drugs?.Length == 0)
+        if (medicine.Drugs == null || medicine.Drugs?.Length == 0)
             throw new Exception("There are no drugs");
         if (medicine.Drugs?.Length == 1)
-            return medicine.Drugs?[0].Name ?? throw new Exception("There are no drugs");
+            return medicine.Drugs?[0].Name;
 
         string mainDrug = this.drugService.MainDrug(medicine.Drugs);
         return mainDrug;
