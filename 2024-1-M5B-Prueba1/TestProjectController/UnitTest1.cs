@@ -30,9 +30,10 @@ namespace TestProjectController
 
             // Act
             var result = controller.GetAll();
+            var expectedresult = new OkObjectResult( new{ success = true, response = controller.GetAll() });
 
             // Assert
-            Assert.AreEqual(new OkObjectResult(result), result);
+            Assert.AreEqual(expectedresult, result);
         }
 
         [TestMethod]
@@ -61,9 +62,10 @@ namespace TestProjectController
 
             // Act
             var result = controller.MainDrug(NewMedicine);
+            var expectedresult = new OkObjectResult(new { success = true, response = controller.MainDrug(NewMedicine) });
 
             // Assert
-            Assert.AreEqual(new OkObjectResult(result), result);
+            Assert.AreEqual(expectedresult, result);
         }
     }
 }
