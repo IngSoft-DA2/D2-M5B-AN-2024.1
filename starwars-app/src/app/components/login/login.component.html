@@ -1,0 +1,8 @@
+<p *ngIf="isLoggedIn()">Estoy logueado</p>
+<button (click)="isLoggedIn() ? logout() : login()" class="btn btn-primary">
+    {{ isLoggedIn() ? "Logout" : "Login" }}
+</button>
+
+<ul>
+    <li *ngFor="let item of numberList">{{item}}</li>
+</ul>
