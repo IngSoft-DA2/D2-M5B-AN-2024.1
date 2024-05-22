@@ -1,0 +1,10 @@
+<div class="list">
+<p>List Component header</p>
+<p>
+    clicked: {{clicked}}
+    services: {{clickedService}}
+</p>
+<div *ngFor="let item of items">
+    <app-item-component [name]="item.name" (childname)="getChildName($event)"></app-item-component>
+</div>
+</div>
