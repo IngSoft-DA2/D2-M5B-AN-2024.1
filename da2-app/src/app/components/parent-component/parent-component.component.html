@@ -1,0 +1,9 @@
+<div class="parent">
+<p>Parent</p>
+
+Clicked: {{clickedname}}
+Clicked by services: {{clickedServices}}
+<div *ngFor="let item of items">
+<app-item-component [name]="item.name" (childname)="getFromChild($event)"></app-item-component>
+</div>
+</div>

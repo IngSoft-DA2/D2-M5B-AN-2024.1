@@ -1,0 +1,22 @@
+<div class="character-list-container">
+    <h2 class="title">Personajes</h2>
+    <div class="character-header">
+      <input class="filter-input" [(ngModel)]="filterValue" placeholder="Filtrar por" />
+      <button class="button" (click)="navigateToAddCharacter()">Agregar Personaje</button>
+    </div>
+    <p class="filter" *ngIf="filterValue">
+      Personajes filtradas por <b>{{ filterValue }}</b>
+    </p>
+    <div class="list" *ngIf="characters && (characters | charactersFilter: filterValue).length > 0; else elseBlock">
+      <app-character-item
+        *ngFor="let character of characters | charactersFilter: filterValue"
+        [character]="character"
+        (delete)="deleteCharacter($event)"
+        (characterClicked)="navigateToEditCharacter($event)"
+      >
+      </app-character-item>
+    </div>
+    <ng-template #elseBlock>
+      <p class="no-characters-message">No hay personajes</p>
+    </ng-template>
+</div>

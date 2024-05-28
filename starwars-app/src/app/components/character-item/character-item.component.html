@@ -1,0 +1,11 @@
+<div class="card">
+    <div (click)="onCharacterClicked()">
+        <div>{{ character?.name }}</div>
+        <div>{{ character?.description }}</div>
+        <div>{{ character?.imageurl }}</div>
+    </div>
+    <div class="delete-button-container">
+        <button class="delete-button" (click)="onDelete()">Borrar</button>
+    </div>
+</div>
+
