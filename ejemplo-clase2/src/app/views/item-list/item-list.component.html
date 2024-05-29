@@ -1,0 +1,10 @@
+<div>
+    <h1>{{title}}</h1>
+    @if (error == undefined) {
+    <ul>
+        <app-item *ngFor="let item of list" [item]="item"></app-item>
+    </ul>
+    } @else {
+    <span>{{error}}</span>
+    }
+</div>

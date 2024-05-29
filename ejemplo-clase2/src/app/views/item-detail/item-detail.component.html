@@ -1,0 +1,6 @@
+<button (click)="goBack()">Volver atras</button>
+
+@if(item !== undefined){
+<h1>({{item.id}}) {{item.name | uppercase}}</h1>
+<h3>{{item.data | prettyData}}</h3>
+}
