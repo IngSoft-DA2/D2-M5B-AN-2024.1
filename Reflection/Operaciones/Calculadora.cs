@@ -1,8 +1,8 @@
 ﻿namespace Operaciones;
 
 public class Calculadora
-    {
-        public string Marca { get; set; }
+{
+   public string Marca { get; set; }
         public string Modelo { get; set; }
         public int Sumar(int a, int b)
         {
@@ -24,5 +24,4 @@ public class Calculadora
                 throw new DivideByZeroException("El denominador no puede ser cero.");
             return a / b;
         }
-
 }

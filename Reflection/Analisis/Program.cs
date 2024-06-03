@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Reflection;
 
-Console.WriteLine("Hello, World!");
 string path = @"../Operaciones/bin/Debug/net8.0/Operaciones.dll";
 Assembly assembly = Assembly.LoadFrom(path);
 
+
+/*
 foreach (Type type in assembly.GetTypes())
 {
     Console.WriteLine($"Tipo: {type.FullName}");
@@ -16,7 +17,8 @@ foreach (Type type in assembly.GetTypes())
     {
         Console.WriteLine($"  Propiedad: {property.Name} ({property.PropertyType})");
     }
-}
+}*/
+
 
 // Crear una instancia de la clase Calculadora y usar sus métodos
 Type calculadoraType = assembly.GetType("Operaciones.Calculadora");
@@ -31,3 +33,4 @@ Console.WriteLine($"Resultado de sumar: {resultadoSumar}");
 MethodInfo multiplicarMethod = calculadoraType.GetMethod("Multiplicar");
 int resultadoMultiplicar = (int)multiplicarMethod.Invoke(calculadoraInstance, new object[] { 4, 6 });
 Console.WriteLine($"Resultado de multiplicar: {resultadoMultiplicar}");
+
