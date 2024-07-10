@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Drugs", "Drugs\Drugs.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Medicines", "Medicines\Medicines.csproj", "{4FB703C2-A451-43D5-8067-A7AA59BB14B7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testing", "Testing\Testing.csproj", "{83DF20A7-EA30-4D2C-B35B-130EFA0D57F0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,5 +38,9 @@ Global
 		{4FB703C2-A451-43D5-8067-A7AA59BB14B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4FB703C2-A451-43D5-8067-A7AA59BB14B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4FB703C2-A451-43D5-8067-A7AA59BB14B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83DF20A7-EA30-4D2C-B35B-130EFA0D57F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83DF20A7-EA30-4D2C-B35B-130EFA0D57F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83DF20A7-EA30-4D2C-B35B-130EFA0D57F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83DF20A7-EA30-4D2C-B35B-130EFA0D57F0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

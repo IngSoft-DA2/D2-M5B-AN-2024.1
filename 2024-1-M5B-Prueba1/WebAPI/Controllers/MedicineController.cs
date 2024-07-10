@@ -5,6 +5,7 @@ using Logic.Models;
 namespace WebAPI.Controllers;
 
 [ApiController]
+[ResultObjectFilter]
 [Route("[controller]")]
 public class MedicineController : ControllerBase
 {
